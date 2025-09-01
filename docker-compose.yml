@@ -17,3 +17,4 @@ services:
 
 volumes:
   postgres_data:
+# DATABASE_URL="postgresql://admin:admin123@localhost:5432/threads_db"

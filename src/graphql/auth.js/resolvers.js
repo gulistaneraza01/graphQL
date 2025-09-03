@@ -1,11 +1,17 @@
-import prisma from "../../config/connectDB.js";
+import UserService from "../../services/user.js";
 
-const queries = {};
+const queries = {
+  sayhello: () => "hello from graphql",
+  loginUSer: (_, payload) => {
+    const data = UserService.logUser(payload);
+    return data;
+  },
+};
 
 const mutations = {
-  createUser: async (_, { name, email, password }) => {
-    const data = await prisma.user.create({ data: { name, email, password } });
-    return JSON.stringify(data);
+  createUser: async (_, payload) => {
+    const data = UserService.createUser(payload);
+    return data;
   },
 };
 

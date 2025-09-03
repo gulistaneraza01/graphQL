@@ -9,10 +9,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+const gqlServer = await createGraphQL();
+
 app.use(cors({ origin: "*" }));
 app.use(express.json());
-
-const gqlServer = await createGraphQL();
 
 app.use("/graphql", expressMiddleware(gqlServer));
 

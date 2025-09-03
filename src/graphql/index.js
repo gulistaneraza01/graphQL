@@ -3,7 +3,6 @@ import User from "./auth.js/index.js";
 
 const typeDefs = `
   type Query {
-    hello:String
     ${User.queries}
   }
 

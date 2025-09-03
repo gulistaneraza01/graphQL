@@ -2,13 +2,15 @@ import { ApolloServer } from "@apollo/server";
 import User from "./auth.js/index.js";
 
 const typeDefs = `
-  type Query {
-    ${User.queries}
-  }
+    ${User.typeDefs}
 
-  type Mutation {
-    ${User.mutations}
-  }
+    type Query {
+        ${User.queries}
+    }
+
+    type Mutation {
+      ${User.mutations}
+    }
 `;
 
 const resolvers = {

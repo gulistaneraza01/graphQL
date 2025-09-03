@@ -35,6 +35,10 @@ class UserService {
 
     return token;
   }
+
+  static async me(id) {
+    return prisma.user.findUnique({ where: { id } });
+  }
 }
 
 export default UserService;

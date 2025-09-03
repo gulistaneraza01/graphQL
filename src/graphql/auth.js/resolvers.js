@@ -6,6 +6,11 @@ const queries = {
     const data = UserService.logUser(payload);
     return data;
   },
+  me: async (_, __, context) => {
+    const id = context.id;
+    const data = await UserService.me(id);
+    return data;
+  },
 };
 
 const mutations = {

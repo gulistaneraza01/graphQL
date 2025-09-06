@@ -23,7 +23,6 @@ app.use(
         const token = req.headers["token"];
 
         const { id } = jwt.verify(token, "123");
-
         return { id };
       } catch (error) {
         return {};
